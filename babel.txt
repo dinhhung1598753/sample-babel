@@ -1,0 +1,34 @@
+1, Babel là gì? 
+    Babel là công cụ biên dịch JS code từ phiên bản mới nhất về các phiên bản cũ hơn 
+    để phù hợp với version cũ của JavaScript hoặc môi trường trình duyệt cũ hơn.
+
+2, Khi nào thì dùng babel?
+    Nodejs: Khi muốn sử dụng các cũ pháp Js mới cho phiên bản node cũ. 
+            Vd: node 12 không sử dụng được Nullish coalescing operator (??)
+    Vue: khi muốn sử dụng cú pháp mới của Js nhưng lại có thể support đụợc nhiều trình duyệt 
+         và version cũ của trình duyệt
+
+3, Example
+Input: 
+    let x = 1;
+    let y;
+
+    console.log(y ?? x);
+
+Output:
+    "use strict";
+
+    var x = 1;
+    var y;
+    console.log(y !== null && y !== void 0 ? y : x);
+
+
+Input:
+    const sum = (a, b) => a + b;
+Output:
+    "use strict";
+
+    var sum = function sum(a, b) {
+    return a + b;
+    };
+
